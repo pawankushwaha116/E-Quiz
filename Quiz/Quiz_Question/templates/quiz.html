@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block body %}
+
+<h2 class="text-center" style="padding-top: 70px;">
+    <span class="text-danger">{{quize_category.title}}
+        Basic Question</span></h2>
+<div class="container rounded-lg p-4" style="background-color: #f8f9fa;">
+    <div class="border-rounded bg-white p-3">
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            {% for i in que_data %}
+            <div class="card-header text-primary">
+                <h4>{{i.question}}</h4>
+            </div>
+            <div class="card-body">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="option1" name="{{i.id}}" value="{{i.option1}}">
+                    <label class="form-check-label" for="option1">{{i.option1}}</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="option2" name="{{i.id}}" value="{{i.option2}}">
+                    <label class="form-check-label" for="option2">{{i.option2}}</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="option3" name="{{i.id}}" value="{{i.option3}}">
+                    <label class="form-check-label" for="option3">{{i.option3}}</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="option4" name="{{i.id}}" value="{{i.option4}}">
+                    <label class="form-check-label" for="option4">{{i.option4}}</label>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="card-footer text-center">
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

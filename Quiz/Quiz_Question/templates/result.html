@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block body %}
+<div style="margin-left: auto; margin-right: auto; margin-bottom: 5px; margin-top: 0px; border-radius: 15px; width: 80%; max-width: 600px;">
+    <div style="border: 1px solid;
+    border-radius: 30px;
+    background-color: rgb(233, 226, 232);
+    padding: 20px;
+    color: hsl(241, 95%, 31%);">
+        <h1 class="text-center">RESULTS</h1>
+        <hr>
+        <div style="padding: 12px 12px; border: none;">
+            <table style="width: 90%;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;">
+                <tr>
+                    <th>
+                        <h3>Username:</h3>
+                    </th>
+                    <td>
+                        <h3>{{performance.user}}</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <h3>Email:</h3>
+                    </th>
+                    <td>
+                        <h3>{{request.user.email}}</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <h3>Quiz Name:</h3>
+                    </th>
+                    <td>
+                        <h3>{{performance.quize_type}}</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <h3>Total Questions:</h3>
+                    </th>
+                    <td>
+                        <h3>{{performance.total_que}}</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <h3>Attempted Questions:</h3>
+                    </th>
+                    <td>
+                        <h3>{{performance.attempt_que}}</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <h3>Correct:</h3>
+                    </th>
+                    <td>
+                        <h3>{{performance.true_que}}</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <h3>Incorrect:</h3>
+                    </th>
+                    <td>
+                        <h3>{{performance.wrong_que}}</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <h3>Points:</h3>
+                    </th>
+                    <td>
+                        <h3>{{performance.points}}/{{out_of}}</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <h3>Date:</h3>
+                    </th>
+                    <td>
+                        <h3>{{performance.date}}</h3>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

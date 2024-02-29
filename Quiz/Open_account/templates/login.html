@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+
+{% block body %}
+  <div style="max-width: 500px; margin: auto; text-align: center; padding: 70px;">
+    <h1><b>Login</b></h1>
+    <hr>
+
+    <form action="" method="POST" novalidate style="text-align: left;">
+      {% csrf_token %}
+
+      <label class="form-label" style="margin-top: 10px;">User Name</label>
+      <input class="form-control" type="text" placeholder="User Name" name="username" style="margin-bottom: 10px;">
+
+      <label class="form-label" style="margin-top: 10px;">Password</label>
+      <input class="form-control" type="password" placeholder="Password" name="pass1" style="margin-bottom: 10px;">
+
+      <input type="submit" value="Login" class="btn btn-success btn-lg btn-block" style="margin-bottom: 10px; padding: 5px;">
+    </form>
+
+    <div style="margin-top: 10px; text-align: center;">
+      If you don't have an account, <a href="/">Signup</a>
+    </div>
+  </div>
+{% endblock %}
